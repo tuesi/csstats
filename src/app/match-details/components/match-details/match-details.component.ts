@@ -68,5 +68,3 @@ export class MatchDetailsComponent implements OnInit {
     })
   }
 }
-
-//https://steamcommunity.com/profiles/76561198447475184

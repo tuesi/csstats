@@ -10,6 +10,6 @@ export class MatchDetailService {
   constructor(private http: HttpClient) { }
 
   getMatchData(matchId: string) {
-    return this.http.get<Data>(`http://localhost:3000/cs/match?matchId=${matchId}`);
+    return this.http.get<Data>(`https://csbot-production.up.railway.app/cs/match?matchId=${matchId}`);
   }
 }
