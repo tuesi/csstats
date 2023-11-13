@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'pixelFont';
+    src: url('../../../../assets/PixelifySans-VariableFont_wght.ttf');
+}
+
+::ng-deep .mat-header-cell {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+.spacer {
+    height: 20px;
+}
+
+.data-table th {
+    width: 5%;
+    text-align: left;
+    padding: 8px;
+    padding-left: 5%;
+}
+
+.data-table td {
+    text-align: left;
+    padding: 8px;
+    padding-left: 5%;
+}
+
+.player-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5%;
+}
+
+.custom-font {
+    font-family: 'pixelFont';
+    font-weight: bold;
+}
+
+.VAC {
+    font-family: 'pixelFont';
+    font-weight: bold;
+    color: red;
+}
+
+.map-name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.map-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    font-size: 30px;
+}
+
+.team {
+    margin-left: 2%;
+    font-size: 25px;
+}
+
+.score {
+    margin-left: 2%;
+    font-size: 20px;
+}
+
+.numbers {
+    font-weight: bold;
+}
+
+.headers {
+    font-weight: bold;
+    color: black;
+}

@@ -1,0 +1,33 @@
+export interface PlayerStats {
+    discordId: string;
+    steamId: string;
+    name: string;
+    imageUrl: string;
+    mvps: number;
+    kills: number;
+    deaths: number;
+    assists: number;
+    totalCashSpend: number;
+    totalDamage: number;
+    totalUtilityDamage: number;
+    totalEnemiesFlashed: number;
+    totalHeadshotCount: number;
+    totalCurrentMapWins: number;
+    cashSpent: number;
+    score: number;
+    adr: number;
+    totalAce: number;
+    total4kills: number;
+    total3kills: number;
+    headshotPercentage: number;
+    teamFlash: number;
+    pimpesMentele: boolean;
+    team: number;
+    matchWon: boolean;
+    rankNew: number;
+    rankOld: number;
+    rankChange: number;
+    hltv2: string;
+    multikillRounds: number;
+    openingKills: number;
+}
