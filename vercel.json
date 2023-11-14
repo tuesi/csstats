@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+        {
+            "source": "/cs2/binglo/cs2debils/:path*",
+            "destination": "https://csstats.vercel.app/:path*"
+        }
+    ]
+}
