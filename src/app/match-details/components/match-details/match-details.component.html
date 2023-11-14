@@ -44,6 +44,11 @@
             <td mat-cell *matCellDef="let player">{{ player.assists }}</td>
         </ng-container>
 
+        <ng-container matColumnDef="headshotPercentage">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>HS%</th>
+            <td mat-cell *matCellDef="let player">{{ player.headshotPercentage }}</td>
+        </ng-container>
+
         <ng-container matColumnDef="mvps">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>MVP</th>
             <td mat-cell *matCellDef="let player">{{ player.mvps }}</td>
@@ -60,10 +65,11 @@
         </ng-container>
 
         <tr class="headers custom-font" mat-header-row
-            *matHeaderRowDef="['name','hltv2','kills', 'deaths', 'assists', 'mvps','adr','score']">
+            *matHeaderRowDef="['name','hltv2','kills', 'deaths', 'assists', 'headshotPercentage', 'mvps','adr','score']">
         </tr>
         <tr class="custom-font numbers" mat-row
-            *matRowDef="let row; columns: ['name','hltv2','kills', 'deaths', 'assists', 'mvps', 'adr', 'score']"></tr>
+            *matRowDef="let row; columns: ['name','hltv2','kills', 'deaths', 'assists', 'headshotPercentage', 'mvps', 'adr', 'score']">
+        </tr>
     </table>
 
     <div class="spacer"></div>
@@ -109,6 +115,11 @@
             <td mat-cell *matCellDef="let player">{{ player.assists }}</td>
         </ng-container>
 
+        <ng-container matColumnDef="headshotPercentage">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>HS%</th>
+            <td mat-cell *matCellDef="let player">{{ player.headshotPercentage }}</td>
+        </ng-container>
+
         <ng-container matColumnDef="mvps">
             <th mat-header-cell *matHeaderCellDef mat-sort-header>MVP</th>
             <td mat-cell *matCellDef="let player">{{ player.mvps }}</td>
@@ -125,8 +136,10 @@
         </ng-container>
 
         <tr class="headers custom-font" mat-header-row
-            *matHeaderRowDef="['name','hltv2','kills', 'deaths', 'assists', 'mvps', 'adr', 'score']"></tr>
+            *matHeaderRowDef="['name','hltv2','kills', 'deaths', 'assists', 'headshotPercentage', 'mvps', 'adr', 'score']">
+        </tr>
         <tr class="numbers custom-font" mat-row
-            *matRowDef="let row; columns: ['name','hltv2','kills', 'deaths', 'assists', 'mvps', 'adr', 'score']"></tr>
+            *matRowDef="let row; columns: ['name','hltv2','kills', 'deaths', 'assists', 'headshotPercentage', 'mvps', 'adr', 'score']">
+        </tr>
     </table>
 </div>
