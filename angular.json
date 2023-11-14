@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/cs2/binglo/cs2debils/",
             "outputPath": "dist/cs-match",
             "index": "src/index.html",
             "main": "src/main.ts",
