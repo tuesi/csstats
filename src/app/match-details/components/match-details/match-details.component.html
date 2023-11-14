@@ -78,7 +78,8 @@
             <td mat-cell *matCellDef="let player">
                 <div class="player-name custom-font">
                     <img src={{player.imageUrl}} alt="Player Image" width="30" height="30">
-                    <a href="https://steamcommunity.com/profiles/{{ player.steamId }}" target="_blank">
+                    <a style="text-decoration: none;" href="https://steamcommunity.com/profiles/{{ player.steamId }}"
+                        target="_blank">
                         {{ player.name }}
                     </a>
                     <div class="VAC" *ngIf="player.vac">
