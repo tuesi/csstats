@@ -31,9 +31,10 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5%;
+    gap: 3%;
     font-size: 10px;
     width: 150%;
+    padding-right: 25%;
 }
 
 .custom-font {
@@ -76,4 +77,29 @@
 .headers {
     font-weight: bold;
     color: black;
+}
+
+.rank-image {
+    width: 60px;
+    min-width: 60px;
+    height: 25px;
+    min-height: 25px;
+}
+
+.rank-number {
+    position: absolute;
+    transform: translate(10%, -2%);
+    font-size: 7px;
+    font-style: italic;
+    letter-spacing: -0.5px;
+}
+
+.rank-number::first-letter {
+    letter-spacing: -2px;
+}
+
+.rank-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

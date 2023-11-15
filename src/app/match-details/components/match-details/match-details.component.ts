@@ -6,6 +6,14 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PlayerStats } from '../../models/playerStats.model';
 import { MatSort, MatSortable, Sort } from '@angular/material/sort';
 
+const sliverUrl = 'assets/images/silver.png';
+const fiveThousandUrl = 'assets/images/5000.png';
+const tenThousandUrl = 'assets/images/10,000.png';
+const fifteenThousandUrl = 'assets/images/15,000.png';
+const twentyThousandUrl = 'assets/images/20,000.png';
+const twentyFiveThousandUrl = 'assets/images/25,000.png';
+const thirtyThousandUrl = 'assets/images/30,000.png';
+
 @Component({
   selector: 'app-match-details',
   templateUrl: './match-details.component.html',
@@ -54,6 +62,8 @@ export class MatchDetailsComponent implements OnInit {
               this.looseTeam = 2;
             }
 
+            this.setRanks(team2, team3);
+
             setTimeout(() => {
               this.dataSourceTeam2.sort = this.sort1;
               this.dataSourceTeam3.sort = this.sort2;
@@ -66,5 +76,51 @@ export class MatchDetailsComponent implements OnInit {
         })
       }
     })
+  }
+
+  setRanks(team2: PlayerStats[], team3: PlayerStats[]) {
+    team2.forEach(player => {
+      player.rankUrl = this.getRanks(player.rankNew);
+    });
+
+    team3.forEach(player => {
+      player.rankUrl = this.getRanks(player.rankNew);
+    });
+  }
+
+  getRanks(rank: number) {
+    if (rank < 5000) {
+      return sliverUrl;
+    } else if (rank > 5000 && rank <= 9999) {
+      return tenThousandUrl;
+    } else if (rank > 10000 && rank <= 14999) {
+      return fiveThousandUrl;
+    } else if (rank > 15000 && rank <= 19999) {
+      return fifteenThousandUrl;
+    } else if (rank > 20000 && rank <= 24999) {
+      return twentyThousandUrl;
+    } else if (rank > 25000 && rank <= 29999) {
+      return twentyFiveThousandUrl;
+    } else {
+      return thirtyThousandUrl;
+    }
+  }
+
+  getRankColor(rank: number) {
+    if (rank < 5000) {
+      return "#b6c5d5";
+    } else if (rank > 5000 && rank <= 9999) {
+      return "#8ec2ef";
+    } else if (rank > 10000 && rank <= 14999) {
+      return "#677ce8";
+    } else if (rank > 15000 && rank <= 19999) {
+      return "#bc6afc";
+    } else if (rank > 20000 && rank <= 24999) {
+      return "#df13ec";
+    } else if (rank > 25000 && rank <= 29999) {
+      return "#e84948";
+    } else {
+      return "#ffd700";
+    }
   }
 }

@@ -1,4 +1,5 @@
 export interface PlayerStats {
+    rankUrl: string;
     discordId: string;
     steamId: string;
     name: string;
@@ -30,4 +31,7 @@ export interface PlayerStats {
     hltv2: string;
     multikillRounds: number;
     openingKills: number;
+    heDmg: Number;
+    molotovDmg: Number;
+    awpNoScope: Number;
 }
