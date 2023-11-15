@@ -13,7 +13,7 @@
             <td mat-cell *matCellDef="let player">
                 <div class="player-name custom-font">
                     <img src={{player.imageUrl}} alt="Player Image" width="30" height="30">
-                    <div class="rank-container">
+                    <div *ngIf="player.rankNew > 50" class="rank-container">
                         <img class="rank-image" src={{player.rankUrl}} alt="Player rank">
                         <div [ngStyle]="{'color': getRankColor(player.rankNew)}" class="rank-number"> {{ player.rankNew
                             |
@@ -90,7 +90,7 @@
             <td mat-cell *matCellDef="let player">
                 <div class="player-name custom-font">
                     <img src={{player.imageUrl}} alt="Player Image" width="30" height="30">
-                    <div class="rank-container">
+                    <div *ngIf="player.rankNew > 50" class="rank-container">
                         <img class="rank-image" src={{player.rankUrl}} alt="Player rank">
                         <div [ngStyle]="{'color': getRankColor(player.rankNew)}" class="rank-number"> {{ player.rankNew
                             |
