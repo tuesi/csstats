@@ -144,7 +144,7 @@ export class MatchDetailsComponent implements OnInit {
       return supremeMaster;
     } else if (rank == 18) {
       return global;
-    } else if (rank > 50 && rank < 5000) {
+    } else if (rank > 50 && rank <= 5000) {
       return sliverUrl;
     } else if (rank > 5000 && rank <= 9999) {
       return tenThousandUrl;
