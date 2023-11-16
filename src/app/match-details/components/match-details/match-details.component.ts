@@ -13,6 +13,25 @@ const fifteenThousandUrl = 'assets/images/15,000.png';
 const twentyThousandUrl = 'assets/images/20,000.png';
 const twentyFiveThousandUrl = 'assets/images/25,000.png';
 const thirtyThousandUrl = 'assets/images/30,000.png';
+const noRank = 'assets/images/skillgroup_none.png';
+const silver1 = 'assets/images/skillgroup1.png';
+const silver2 = 'assets/images/skillgroup2.png';
+const silver3 = 'assets/images/skillgroup3.png';
+const silver4 = 'assets/images/skillgroup4.png';
+const silverElite = 'assets/images/skillgroup5.png';
+const silverEliteMaster = 'assets/images/skillgroup6.png';
+const gold1 = 'assets/images/skillgroup7.png';
+const gold2 = 'assets/images/skillgroup8.png';
+const gold3 = 'assets/images/skillgroup9.png';
+const goldMaster = 'assets/images/skillgroup10.png';
+const masterGuardian = 'assets/images/skillgroup11.png';
+const masterGuardian2 = 'assets/images/skillgroup12.png';
+const masterGuardianElite = 'assets/images/skillgroup13.png';
+const distinguishedMasterGuardian = 'assets/images/skillgroup14.png';
+const legendaryEagle = 'assets/images/skillgroup15.png';
+const legendaryEagleMaster = 'assets/images/skillgroup16.png';
+const supremeMaster = 'assets/images/skillgroup17.png';
+const global = 'assets/images/skillgroup18.png';
 
 @Component({
   selector: 'app-match-details',
@@ -89,7 +108,43 @@ export class MatchDetailsComponent implements OnInit {
   }
 
   getRanks(rank: number) {
-    if (rank < 5000) {
+    if (rank == 1) {
+      return silver1;
+    } else if (rank == 2) {
+      return silver2;
+    } else if (rank == 3) {
+      return silver3
+    } else if (rank == 4) {
+      return silver4;
+    } else if (rank == 5) {
+      return silverElite;
+    } else if (rank == 6) {
+      return silverEliteMaster
+    } else if (rank == 7) {
+      return gold1;
+    } else if (rank == 8) {
+      return gold2;
+    } else if (rank == 9) {
+      return gold3;
+    } else if (rank == 10) {
+      return goldMaster;
+    } else if (rank == 11) {
+      return masterGuardian;
+    } else if (rank == 12) {
+      return masterGuardian2;
+    } else if (rank == 13) {
+      return masterGuardianElite;
+    } else if (rank == 14) {
+      return distinguishedMasterGuardian;
+    } else if (rank == 15) {
+      return legendaryEagle;
+    } else if (rank == 16) {
+      return legendaryEagleMaster;
+    } else if (rank == 17) {
+      return supremeMaster;
+    } else if (rank == 18) {
+      return global;
+    } else if (rank > 50 && rank < 5000) {
       return sliverUrl;
     } else if (rank > 5000 && rank <= 9999) {
       return tenThousandUrl;
@@ -101,8 +156,10 @@ export class MatchDetailsComponent implements OnInit {
       return twentyThousandUrl;
     } else if (rank > 25000 && rank <= 29999) {
       return twentyFiveThousandUrl;
-    } else {
+    } else if (rank > 30000) {
       return thirtyThousandUrl;
+    } else {
+      return noRank;
     }
   }
 
@@ -119,8 +176,10 @@ export class MatchDetailsComponent implements OnInit {
       return "#df13ec";
     } else if (rank > 25000 && rank <= 29999) {
       return "#e84948";
-    } else {
+    } else if (rank > 30000) {
       return "#ffd700";
+    } else {
+      return "black";
     }
   }
 }
