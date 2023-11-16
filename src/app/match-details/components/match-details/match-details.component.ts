@@ -156,7 +156,7 @@ export class MatchDetailsComponent implements OnInit {
       return twentyThousandUrl;
     } else if (rank > 25000 && rank <= 29999) {
       return twentyFiveThousandUrl;
-    } else if (rank > 30000) {
+    } else if (rank >= 30000) {
       return thirtyThousandUrl;
     } else {
       return noRank;
