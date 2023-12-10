@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { PlayerStats } from '../../models/playerStats.model';
 import { MatSort, MatSortable, Sort } from '@angular/material/sort';
 import { BehaviorSubject } from 'rxjs';
+import { ThemeService } from '../../services/theme.service';
 
 const sliverUrl = 'assets/images/silver.png';
 const fiveThousandUrl = 'assets/images/5000.png';
@@ -42,7 +43,7 @@ const global = 'assets/images/skillgroup18.png';
 })
 export class MatchDetailsComponent implements OnInit {
 
-  constructor(private matchDetailService: MatchDetailService, private route: ActivatedRoute) { }
+  constructor(private matchDetailService: MatchDetailService, private route: ActivatedRoute, private themeService: ThemeService) { }
 
   @ViewChild('sort1') sort1!: MatSort;
   @ViewChild('sort2') sort2!: MatSort;
@@ -56,25 +57,12 @@ export class MatchDetailsComponent implements OnInit {
   wonTeam!: number;
   looseTeam!: number;
 
-  @Output() toggleChange = new EventEmitter<boolean>();
   isChecked = false;
 
-  public isDarkTheme = new BehaviorSubject<boolean>(this.isChecked);
-
-  checkStorageForDarkTheme() {
-    const storedValue = localStorage.getItem('juodulys') === 'true';
-    this.isDarkTheme.next(storedValue);
-    this.isChecked = storedValue;
-  }
-
-  onToggleChange(event: any): void {
-    var checkStatus = event.target.checked;
-    localStorage.setItem('juodulys', checkStatus.toString());
-    this.isDarkTheme.next(checkStatus);
-  }
-
   ngOnInit(): void {
-    this.checkStorageForDarkTheme();
+    this.themeService.getCheckedState().subscribe((status) => {
+      this.isChecked = status;
+    });
     this.route.queryParams.subscribe(params => {
       this.matchId = params['matchId'];
       if (this.matchId) {

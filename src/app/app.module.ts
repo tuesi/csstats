@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
+import { ThemeService } from './match-details/services/theme.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatSortModule
   ],
-  providers: [],
+  providers: [ThemeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

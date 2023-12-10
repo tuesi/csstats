@@ -1,9 +1,4 @@
-<div *ngIf="matchData" [ngClass]="{'dark': isDarkTheme.getValue(), 'light': !isDarkTheme.getValue()}">
-
-    <label class="switch">
-        <input type="checkbox" [checked]="isChecked" (change)="onToggleChange($event)">
-        <span class="slider round"></span>
-    </label>
+<div *ngIf="matchData" [ngClass]="{'dark': isChecked, 'light': !isChecked}">
 
     <span class="map-name custom-font">{{matchData.map}}</span>
     <span class="map-score custom-font">{{matchData.team1Score}} : {{matchData.team2Score}}</span>
