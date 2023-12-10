@@ -64,6 +64,7 @@ td {
     display: flex;
     height: 100%;
     flex-direction: column;
+    overflow: auto;
 }
 
 .mat-header-cell {
@@ -146,16 +147,16 @@ td {
 }
 
 .rank-image {
-    width: 60px;
-    min-width: 60px;
-    height: 25px;
-    min-height: 25px;
+    width: 75px;
+    min-width: 75px;
+    height: 30px;
+    min-height: 30px;
 }
 
 .rank-number {
     position: absolute;
-    transform: translate(40%, -150%);
-    font-size: 7px;
+    transform: translate(10%, 0);
+    font-size: 0.8vh;
     font-style: italic;
     letter-spacing: -0.5px;
 }
@@ -166,4 +167,7 @@ td {
 
 .rank-container {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
