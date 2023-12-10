@@ -1,11 +1,16 @@
-<div *ngIf="matchData">
+<div *ngIf="matchData" [ngClass]="{'dark': isDarkTheme.getValue(), 'light': !isDarkTheme.getValue()}">
 
-    <h1 class="map-name custom-font">{{matchData.map}}</h1>
-    <h2 class="map-score custom-font">{{matchData.team1Score}} : {{matchData.team2Score}}</h2>
+    <label class="switch">
+        <input type="checkbox" [checked]="isChecked" (change)="onToggleChange($event)">
+        <span class="slider round"></span>
+    </label>
 
-    <p *ngIf="wonTeam == 2" class="team custom-font">WIN</p>
-    <p *ngIf="wonTeam == 3" class="team custom-font">LOSS</p>
-    <p class="score custom-font">{{matchData.team2Score}}</p>
+    <span class="map-name custom-font">{{matchData.map}}</span>
+    <span class="map-score custom-font">{{matchData.team1Score}} : {{matchData.team2Score}}</span>
+
+    <span *ngIf="wonTeam == 2" class="team custom-font">WIN</span>
+    <span *ngIf="wonTeam == 3" class="team custom-font">LOSS</span>
+    <span class="score custom-font">{{matchData.team2Score}}</span>
     <table mat-table class="data-table" [dataSource]="dataSourceTeam2" matSort #sort1="matSort">
 
         <ng-container matColumnDef="name">
@@ -81,9 +86,9 @@
 
     <div class="spacer"></div>
 
-    <p *ngIf="wonTeam == 3" class="team custom-font">WIN</p>
-    <p *ngIf="wonTeam == 2" class="team custom-font">LOSS</p>
-    <p class="score custom-font">{{matchData.team1Score}}</p>
+    <span *ngIf="wonTeam == 3" class="team custom-font">WIN</span>
+    <span *ngIf="wonTeam == 2" class="team custom-font">LOSS</span>
+    <span class="score custom-font">{{matchData.team1Score}}</span>
     <table mat-table class="data-table" [dataSource]="dataSourceTeam3" matSort #sort2="matSort">
 
         <ng-container matColumnDef="name">

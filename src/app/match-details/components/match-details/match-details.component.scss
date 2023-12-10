@@ -3,7 +3,61 @@
     src: url('../../../../assets/Quinquefive-ALoRM.ttf');
 }
 
-::ng-deep .mat-header-cell {
+.dark {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    background-color: rgb(33, 34, 41);
+
+    .headers {
+        font-weight: bold;
+        color: rgb(255, 255, 255);
+    }
+
+    .mat-header-cell {
+        background-color: rgb(49, 51, 61);
+        color: rgb(255, 255, 255);
+        font-size: 8px;
+    }
+
+    .mat-cell {
+        background-color: rgb(33, 34, 41);
+        color: rgb(255, 255, 255);
+        border-bottom: 2px solid rgb(39, 41, 45);
+    }
+
+    .map-name {
+        color: white;
+    }
+
+    .map-score {
+        color: white;
+    }
+
+    .team {
+        color: white;
+    }
+
+    .score {
+        color: white;
+    }
+
+    a {
+        color: rgb(56, 186, 226);
+    }
+
+    a:hover {
+        color: aquamarine;
+    }
+}
+
+.light {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.mat-header-cell {
     background-color: #f0f0f0;
     color: black;
     font-size: 8px;
@@ -53,7 +107,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 1%;
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .map-score {
@@ -102,4 +156,61 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    top: 5px;
+    right: 8px;
+    margin-left: auto;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(33, 34, 41);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 15px;
+    width: 15px;
+    left: 5px;
+    bottom: 3px;
+    background-color: rgb(255, 255, 255);
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #d6d6d6;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #d6d6d6;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+    background-color: rgb(33, 34, 41);
 }
