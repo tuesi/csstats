@@ -115,6 +115,18 @@ export class MatchDetailsComponent implements OnInit {
     });
   }
 
+  formatInteger(rankNew: number): string {
+    const parts = (rankNew / 1000).toFixed(3).split('.');
+    const integerPart = parts[0];
+    return `${integerPart}`;
+  }
+
+  formatDecimal(rankNew: number): string {
+    const parts = (rankNew / 1000).toFixed(3).split('.');
+    const decimalPart = parts[1] || '';
+    return `${decimalPart}`;
+  }
+
   getRanks(rank: number) {
     if (rank == 1) {
       return silver1;

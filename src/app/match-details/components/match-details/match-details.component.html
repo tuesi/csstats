@@ -16,9 +16,11 @@
                     <div class="rank-container">
                         <img class="rank-image" src={{player.rankUrl}} alt="Player rank">
                         <div *ngIf="player.rankNew > 50" [ngStyle]="{'color': getRankColor(player.rankNew)}"
-                            class="rank-number"> {{ player.rankNew
-                            |
-                            number:'1.0-0' }}</div>
+                            class="integer rank-number"> {{ formatInteger(player.rankNew)}}</div>
+                        <div *ngIf="player.rankNew > 50" [ngStyle]="{'color': getRankColor(player.rankNew)}"
+                            class="dot rank-number">.</div>
+                        <div *ngIf="player.rankNew > 50" [ngStyle]="{'color': getRankColor(player.rankNew)}"
+                            class="decimal rank-number"> {{ formatDecimal(player.rankNew)}}</div>
                     </div>
                     <a style="text-decoration: none;" href="https://steamcommunity.com/profiles/{{ player.steamId }}"
                         target="_blank">
@@ -94,9 +96,11 @@
                     <div class="rank-container">
                         <img class="rank-image" src={{player.rankUrl}} alt="Player rank">
                         <div *ngIf="player.rankNew > 50" [ngStyle]="{'color': getRankColor(player.rankNew)}"
-                            class="rank-number"> {{ player.rankNew
-                            |
-                            number:'1.0-0' }}</div>
+                            class="integer rank-number"> {{ formatInteger(player.rankNew)}}</div>
+                        <div *ngIf="player.rankNew > 50" [ngStyle]="{'color': getRankColor(player.rankNew)}"
+                            class="dot rank-number">.</div>
+                        <div *ngIf="player.rankNew > 50" [ngStyle]="{'color': getRankColor(player.rankNew)}"
+                            class="decimal rank-number"> {{ formatDecimal(player.rankNew)}}</div>
                     </div>
                     <a style="text-decoration: none;" href="https://steamcommunity.com/profiles/{{ player.steamId }}"
                         target="_blank">
