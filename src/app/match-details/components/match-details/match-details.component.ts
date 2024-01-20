@@ -164,17 +164,17 @@ export class MatchDetailsComponent implements OnInit {
       return supremeMaster;
     } else if (rank == 18) {
       return global;
-    } else if (rank > 50 && rank <= 5000) {
+    } else if (rank > 50 && rank <= 4999) {
       return sliverUrl;
-    } else if (rank > 5000 && rank <= 9999) {
+    } else if (rank >= 5000 && rank <= 9999) {
       return tenThousandUrl;
-    } else if (rank > 10000 && rank <= 14999) {
+    } else if (rank >= 10000 && rank <= 14999) {
       return fiveThousandUrl;
-    } else if (rank > 15000 && rank <= 19999) {
+    } else if (rank >= 15000 && rank <= 19999) {
       return fifteenThousandUrl;
-    } else if (rank > 20000 && rank <= 24999) {
+    } else if (rank >= 20000 && rank <= 24999) {
       return twentyThousandUrl;
-    } else if (rank > 25000 && rank <= 29999) {
+    } else if (rank >= 25000 && rank <= 29999) {
       return twentyFiveThousandUrl;
     } else if (rank >= 30000) {
       return thirtyThousandUrl;
@@ -184,19 +184,19 @@ export class MatchDetailsComponent implements OnInit {
   }
 
   getRankColor(rank: number) {
-    if (rank < 5000) {
+    if (rank <= 5000) {
       return "#b6c5d5";
     } else if (rank > 5000 && rank <= 9999) {
       return "#8ec2ef";
-    } else if (rank > 10000 && rank <= 14999) {
+    } else if (rank >= 10000 && rank <= 14999) {
       return "#677ce8";
-    } else if (rank > 15000 && rank <= 19999) {
+    } else if (rank >= 15000 && rank <= 19999) {
       return "#bc6afc";
-    } else if (rank > 20000 && rank <= 24999) {
+    } else if (rank >= 20000 && rank <= 24999) {
       return "#df13ec";
-    } else if (rank > 25000 && rank <= 29999) {
+    } else if (rank >= 25000 && rank <= 29999) {
       return "#e84948";
-    } else if (rank > 30000) {
+    } else if (rank >= 30000) {
       return "#ffd700";
     } else {
       return "black";
